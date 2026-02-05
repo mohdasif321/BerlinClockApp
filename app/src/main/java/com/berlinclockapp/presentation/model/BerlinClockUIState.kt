@@ -8,4 +8,5 @@ data class BerlinClockUIState(
     val bottomHourLight: List<LightColor> = List(4) { LightColor.OFF },
     val topMinuteLight: List<LightColor> = List(11) { LightColor.OFF },
     val bottomMinuteLight: List<LightColor> = List(4) { LightColor.OFF },
+    val time: String = "00:00:00"
 )
