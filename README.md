@@ -14,8 +14,8 @@ The clock is read from top to bottom, with rows representing different time unit
 
 # Example Calculation:
 (e.g., 16:48):
-Hours: (3 lamps in 2nd row \(\times \) 5) + (1 lamp in 3rd row \(\times \) 1) = \(15+1=16\) hours.
-Minutes: (9 lamps in 4th row \(\times \) 5) + (3 lamps in 5th row \(\times \) 1) = \(45+3=48\) minutes. 
+- Hours: (3 lamps in 2nd row \(\times \) 5) + (1 lamp in 3rd row \(\times \) 1) = \(15+1=16\) hours.
+- Minutes: (9 lamps in 4th row \(\times \) 5) + (3 lamps in 5th row \(\times \) 1) = \(45+3=48\) minutes. 
 
 
 ## How to run
