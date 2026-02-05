@@ -8,7 +8,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BerlinClockApp">
         <activity
-            android:name=".presentation.theme.ui.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.BerlinClockApp">
             <intent-filter>

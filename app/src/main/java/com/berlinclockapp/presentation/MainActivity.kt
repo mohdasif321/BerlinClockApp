@@ -1,4 +1,4 @@
-package com.berlinclockapp.presentation.theme.ui
+package com.berlinclockapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            BerlinClockAppTheme {
+            _root_ide_package_.com.berlinclockapp.presentation.theme.ui.BerlinClockAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
@@ -40,7 +40,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    BerlinClockAppTheme {
+    _root_ide_package_.com.berlinclockapp.presentation.theme.ui.BerlinClockAppTheme {
         Greeting("Android")
     }
 }
