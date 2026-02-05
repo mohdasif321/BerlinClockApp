@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.berlinclockapp.presentation.screen.BerlinClockScreen
 import com.berlinclockapp.presentation.theme.ui.BerlinClockAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,10 +22,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun App() {}
+fun App() {
+    BerlinClockScreen()
+}
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    BerlinClockAppTheme {}
+    BerlinClockAppTheme {
+       App()
+    }
 }
