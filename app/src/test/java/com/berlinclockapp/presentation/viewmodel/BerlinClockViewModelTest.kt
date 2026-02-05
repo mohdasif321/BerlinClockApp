@@ -1,9 +1,12 @@
 package com.berlinclockapp.presentation.viewmodel
 
+import com.berlinclockapp.constants.HOUR_LIGHT_COUNT
+import com.berlinclockapp.constants.INITIAL_TIME
+import com.berlinclockapp.constants.TOP_MINUTE_LIGHT_COUNT
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import utility.LightColor
+import com.berlinclockapp.utility.LightColor
 
 class BerlinClockViewModelTest {
 
@@ -21,21 +24,23 @@ class BerlinClockViewModelTest {
 
     @Test
     fun `check topHourLight are initially OFF`() {
-        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.topHourLight == List(4) { LightColor.OFF })
+        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.topHourLight == List(HOUR_LIGHT_COUNT) { LightColor.OFF })
     }
 
     @Test
     fun `check bottomHourLight are initially OFF`() {
-        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.bottomHourLight == List(4) { LightColor.OFF })
+        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.bottomHourLight == List(HOUR_LIGHT_COUNT) { LightColor.OFF })
     }
 
     @Test
     fun `check topMinuteLight are initially OFF`() {
-        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.topMinuteLight == List(11) { LightColor.OFF })
+        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.topMinuteLight == List(
+            TOP_MINUTE_LIGHT_COUNT
+        ) { LightColor.OFF })
     }
 
     @Test
     fun `check initial time value`() {
-        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.time == "00:00:00")
+        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.time == INITIAL_TIME)
     }
 }

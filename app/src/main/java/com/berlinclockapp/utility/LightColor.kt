@@ -1,4 +1,4 @@
-package utility
+package com.berlinclockapp.utility
 
 import androidx.compose.ui.graphics.Color
 
