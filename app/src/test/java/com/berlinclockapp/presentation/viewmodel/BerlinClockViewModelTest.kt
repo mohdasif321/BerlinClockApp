@@ -28,4 +28,9 @@ class BerlinClockViewModelTest {
     fun `check bottomHourLight are initially OFF`() {
         Assert.assertTrue(berlinClockViewModel.berlinClockState.value.bottomHourLight == List(4) { LightColor.OFF })
     }
+
+    @Test
+    fun `check topMinuteLight are initially OFF`() {
+        Assert.assertTrue(berlinClockViewModel.berlinClockState.value.topMinuteLight == List(11) { LightColor.OFF })
+    }
 }
