@@ -14,7 +14,7 @@ class GetBerlinClockStateUseCase {
         val (hours, minutes, seconds) = time.split(":").map { it.toInt() }
         return BerlinClockState (getSecondLight(seconds),
             getTopHourLight(hours),
-            List(HOUR_LIGHT_COUNT) { LightColor.OFF },
+            getBottomHourLight(hours),
             getTopMinutesLight(minutes),
             getBottomMinutesLight(minutes),
             time
