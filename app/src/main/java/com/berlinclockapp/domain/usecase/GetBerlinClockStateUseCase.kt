@@ -13,7 +13,7 @@ class GetBerlinClockStateUseCase {
         val topMinutesLight = MutableList(TOP_MINUTE_LIGHT_COUNT) { LightColor.OFF }
         val topMinutesOnLightCount = minutes / TOP_MINUTE_LIGHT_VALUE
 
-        (0..< topMinutesOnLightCount).forEach { index -> topMinutesLight[index]  = LightColor.YELLOW }
+        (0..<topMinutesOnLightCount).forEach { index -> topMinutesLight[index]  = if ((index + 1) % 3 == 0) LightColor.RED else LightColor.YELLOW }
         return topMinutesLight
     }
 }

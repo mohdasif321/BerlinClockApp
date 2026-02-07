@@ -81,4 +81,13 @@ class GetBerlinClockStateUseCaseTest {
 
         Assert.assertEquals(false, minutesLightStates.any { it == LightColor.RED })
     }
+
+    @Test
+    fun `test top minutes light row is having at least one red light On when minutes are greater than 15 mins`() {
+        val minutes = 15
+
+        val minutesLightStates = getBerlinClockStateUseCase.getTopMinutesLight(minutes)
+
+        Assert.assertEquals(true, minutesLightStates.any { it == LightColor.RED })
+    }
 }
