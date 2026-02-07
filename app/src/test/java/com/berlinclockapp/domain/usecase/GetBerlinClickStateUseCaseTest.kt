@@ -101,4 +101,13 @@ class GetBerlinClockStateUseCaseTest {
             Assert.assertEquals(LightColor.OFF, it)
         }
     }
+
+    @Test
+    fun `test at least one Bottom minutes light is On when minutes is not divisible by 5`() {
+        val minutes = 16
+
+        val minutesLightStates = getBerlinClockStateUseCase.getBottomMinutesLight(minutes)
+
+        Assert.assertEquals( true,  minutesLightStates.any { it == LightColor.YELLOW })
+    }
 }

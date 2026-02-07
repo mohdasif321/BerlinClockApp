@@ -19,6 +19,10 @@ class GetBerlinClockStateUseCase {
     }
 
     fun getBottomMinutesLight(minutes: Int): List<LightColor> {
-        return List(BOTTOM_MINUTE_LIGHT_COUNT) { LightColor.OFF }
+        val bottomMinutesLight = MutableList(BOTTOM_MINUTE_LIGHT_COUNT) { LightColor.OFF }
+
+        (0..< minutes % TOP_MINUTE_LIGHT_VALUE).forEach { index -> bottomMinutesLight[index] = LightColor.YELLOW }
+
+        return bottomMinutesLight
     }
 }
