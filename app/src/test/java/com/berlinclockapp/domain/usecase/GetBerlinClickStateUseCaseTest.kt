@@ -21,4 +21,13 @@ class GetBerlinClockStateUseCaseTest {
 
         Assert.assertEquals( LightColor.OFF, secondLightIsOff)
     }
+
+    @Test
+    fun `test when secondLight is On for Even Second`() {
+        val second = 12
+
+        val secondLightState = getBerlinClockStateUseCase.getSecondLight(second)
+
+        Assert.assertEquals(LightColor.YELLOW, secondLightState)
+    }
 }
