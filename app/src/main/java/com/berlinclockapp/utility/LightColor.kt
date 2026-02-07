@@ -4,5 +4,6 @@ import androidx.compose.ui.graphics.Color
 
 enum class LightColor(color: Color) {
     OFF(Color.Gray),
-    YELLOW(Color.Yellow)
+    YELLOW(Color.Yellow),
+    RED(Color.Red)
 }
