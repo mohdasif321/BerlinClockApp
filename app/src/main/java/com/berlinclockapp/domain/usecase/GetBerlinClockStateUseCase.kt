@@ -11,7 +11,8 @@ import com.berlinclockapp.utility.LightColor
 class GetBerlinClockStateUseCase {
 
     operator fun invoke(time: String): BerlinClockState {
-        return BerlinClockState (LightColor.OFF,
+        val (hours, minutes, seconds) = time.split(":").map { it.toInt() }
+        return BerlinClockState (getSecondLight(seconds),
             List(HOUR_LIGHT_COUNT) { LightColor.OFF },
             List(HOUR_LIGHT_COUNT) { LightColor.OFF },
             List(TOP_MINUTE_LIGHT_COUNT) { LightColor.OFF },
