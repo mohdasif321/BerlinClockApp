@@ -130,4 +130,12 @@ class GetBerlinClockStateUseCaseTest {
             Assert.assertEquals(LightColor.OFF, it)
         }
     }
+
+    @Test
+    fun `test when all top hour lights are On`() {
+        val hours = 21
+        val hourLightStates = getBerlinClockStateUseCase.getTopHourLight(hours)
+
+        Assert.assertEquals( true,  hourLightStates.all { it == LightColor.RED })
+    }
 }
