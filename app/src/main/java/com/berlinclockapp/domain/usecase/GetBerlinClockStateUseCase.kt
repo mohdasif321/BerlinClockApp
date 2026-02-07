@@ -1,5 +1,6 @@
 package com.berlinclockapp.domain.usecase
 
+import com.berlinclockapp.constants.BOTTOM_MINUTE_LIGHT_COUNT
 import com.berlinclockapp.constants.TOP_MINUTE_LIGHT_COUNT
 import com.berlinclockapp.constants.TOP_MINUTE_LIGHT_VALUE
 import com.berlinclockapp.utility.LightColor
@@ -15,5 +16,9 @@ class GetBerlinClockStateUseCase {
 
         (0..<topMinutesOnLightCount).forEach { index -> topMinutesLight[index]  = if ((index + 1) % 3 == 0) LightColor.RED else LightColor.YELLOW }
         return topMinutesLight
+    }
+
+    fun getBottomMinutesLight(minutes: Int): List<LightColor> {
+        return List(BOTTOM_MINUTE_LIGHT_COUNT) { LightColor.OFF }
     }
 }
