@@ -227,4 +227,13 @@ class GetBerlinClockStateUseCaseTest {
 
         Assert.assertEquals( true,  berlinClockState.bottomMinuteLights.any { it == LightColor.YELLOW })
     }
+
+    @Test
+    fun `test GetBerlinClockStateUseCase() for a given formatted time and return BerlinClockState with top hour lights Off`() {
+        val stringTime = "04:05:06"
+
+        val berlinClockState = getBerlinClockStateUseCase(stringTime)
+
+        Assert.assertEquals( true,  berlinClockState.topHourLights.all { it == LightColor.OFF })
+    }
 }
