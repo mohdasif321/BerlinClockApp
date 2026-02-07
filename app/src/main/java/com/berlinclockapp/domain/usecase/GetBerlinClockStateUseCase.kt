@@ -5,9 +5,21 @@ import com.berlinclockapp.constants.HOUR_LIGHT_COUNT
 import com.berlinclockapp.constants.HOUR_LIGHT_VALUE
 import com.berlinclockapp.constants.TOP_MINUTE_LIGHT_COUNT
 import com.berlinclockapp.constants.TOP_MINUTE_LIGHT_VALUE
+import com.berlinclockapp.domain.model.BerlinClockState
 import com.berlinclockapp.utility.LightColor
 
 class GetBerlinClockStateUseCase {
+
+    operator fun invoke(time: String): BerlinClockState {
+        return BerlinClockState (LightColor.OFF,
+            List(HOUR_LIGHT_COUNT) { LightColor.OFF },
+            List(HOUR_LIGHT_COUNT) { LightColor.OFF },
+            List(TOP_MINUTE_LIGHT_COUNT) { LightColor.OFF },
+            List(BOTTOM_MINUTE_LIGHT_COUNT) { LightColor.OFF },
+            time
+        )
+    }
+
     fun getSecondLight(seconds: Int): LightColor {
         return if (seconds % 2 == 0) LightColor.YELLOW else LightColor.OFF
     }
