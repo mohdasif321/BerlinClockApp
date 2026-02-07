@@ -13,7 +13,7 @@ class GetBerlinClockStateUseCase {
     operator fun invoke(time: String): BerlinClockState {
         val (hours, minutes, seconds) = time.split(":").map { it.toInt() }
         return BerlinClockState (getSecondLight(seconds),
-            List(HOUR_LIGHT_COUNT) { LightColor.OFF },
+            getTopHourLight(hours),
             List(HOUR_LIGHT_COUNT) { LightColor.OFF },
             getTopMinutesLight(minutes),
             getBottomMinutesLight(minutes),
