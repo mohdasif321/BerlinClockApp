@@ -36,4 +36,8 @@ class GetBerlinClockStateUseCase {
         (0..<topHoursOnLightCount).forEach { index -> topHoursLight[index] = LightColor.RED }
         return topHoursLight
     }
+
+    fun getBottomHourLight(hours: Int): List<LightColor> {
+        return List(HOUR_LIGHT_COUNT) { LightColor.OFF }
+    }
 }
