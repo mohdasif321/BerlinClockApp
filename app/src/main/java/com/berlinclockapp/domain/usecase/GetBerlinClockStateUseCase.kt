@@ -16,7 +16,7 @@ class GetBerlinClockStateUseCase {
             List(HOUR_LIGHT_COUNT) { LightColor.OFF },
             List(HOUR_LIGHT_COUNT) { LightColor.OFF },
             getTopMinutesLight(minutes),
-            List(BOTTOM_MINUTE_LIGHT_COUNT) { LightColor.OFF },
+            getBottomMinutesLight(minutes),
             time
         )
     }
