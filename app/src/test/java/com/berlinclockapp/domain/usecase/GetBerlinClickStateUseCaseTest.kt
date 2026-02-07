@@ -54,7 +54,7 @@ class GetBerlinClockStateUseCaseTest {
     }
 
     @Test
-    fun `test all top minutes light is On when minutes is greater than 54 and less than 60 mins`() {
+    fun `test all top minutes lights are On when minute is greater than 54 and less than 60 mins`() {
         val minutes = 55
 
         val minutesLightStates = getBerlinClockStateUseCase.getTopMinutesLight(minutes)
