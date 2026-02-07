@@ -60,7 +60,7 @@ class GetBerlinClockStateUseCaseTest {
         val minutesLightStates = getBerlinClockStateUseCase.getTopMinutesLight(minutes)
 
         minutesLightStates.forEach {
-            Assert.assertTrue( it == LightColor.YELLOW)
+            Assert.assertEquals(LightColor.YELLOW, it)
         }
     }
 
@@ -70,7 +70,7 @@ class GetBerlinClockStateUseCaseTest {
 
         val minutesLightStates = getBerlinClockStateUseCase.getTopMinutesLight(minutes)
 
-        Assert.assertTrue(minutesLightStates.any { it == LightColor.OFF })
+        Assert.assertEquals(true, minutesLightStates.any { it == LightColor.OFF })
     }
 
     @Test
@@ -79,6 +79,6 @@ class GetBerlinClockStateUseCaseTest {
 
         val minutesLightStates = getBerlinClockStateUseCase.getTopMinutesLight(minutes)
 
-        Assert.assertFalse(minutesLightStates.any { it == LightColor.RED })
+        Assert.assertEquals(false, minutesLightStates.any { it == LightColor.RED })
     }
 }
