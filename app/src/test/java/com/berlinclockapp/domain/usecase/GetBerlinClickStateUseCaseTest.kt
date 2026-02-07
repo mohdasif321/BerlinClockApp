@@ -63,4 +63,13 @@ class GetBerlinClockStateUseCaseTest {
             Assert.assertTrue( it == LightColor.YELLOW)
         }
     }
+
+    @Test
+    fun `test all top minutes lights are not On when minute is not greater than 54`() {
+        val minutes = 54
+
+        val minutesLightStates = getBerlinClockStateUseCase.getTopMinutesLight(minutes)
+
+        Assert.assertTrue(minutesLightStates.any { it == LightColor.OFF })
+    }
 }
